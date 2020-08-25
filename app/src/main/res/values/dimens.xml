@@ -5,6 +5,8 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="text_size_title">20sp</dimen>
     <dimen name="margin_edit_text">24dp</dimen>
+    <dimen name="margin_10">10dp</dimen>
+    <dimen name="margin_5">5dp</dimen>
     <dimen name="margin_edit_text_top">8dp</dimen>
     <dimen name="text_size_16">16sp</dimen>
     <dimen name="width_text_view">80dp</dimen>

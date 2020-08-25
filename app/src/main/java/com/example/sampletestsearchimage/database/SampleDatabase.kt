@@ -1,13 +1,14 @@
-package com.example.sampletestraman.database
+package com.example.sampletestsearchimage.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.sampletestsearchimage.database.entity.ImageComments
 
 @Database(
         entities = [
-            Person::class
+            ImageComments::class
         ],
         exportSchema = false,
         version = 1
@@ -17,7 +18,7 @@ import androidx.room.RoomDatabase
 
 abstract class SampleDatabase : RoomDatabase() {
 
-    abstract fun personDao(): PersonDao
+    abstract fun sampleDao(): SampleDao
 
     companion object {
         // Singleton prevents multiple instances of database opening at the
@@ -25,6 +26,7 @@ abstract class SampleDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: SampleDatabase? = null
 
+        @JvmStatic
         fun getDatabase(context: Context): SampleDatabase {
             val tempInstance = INSTANCE
             if (tempInstance != null) {

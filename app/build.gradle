@@ -19,7 +19,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://api.imgur.com/3/gallery/\"")
+        }
         release {
+            buildConfigField("String", "BASE_URL", "\"https://api.imgur.com/3/gallery/\"")
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
@@ -74,6 +78,17 @@ dependencies {
     // Parser
     implementation "com.google.code.gson:gson:2.8.5"
 
+    // Networking
+    implementation "com.squareup.retrofit2:retrofit:2.4.0"
+    implementation "com.squareup.retrofit2:converter-gson:2.4.0"
+    implementation "com.squareup.okhttp3:okhttp:3.11.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.11.0"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
+
+    // logger
+    implementation "com.jakewharton.timber:timber:4.7.1"
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
 }
 repositories {
     maven { url 'https://dl.bintray.com/kotlin/kotlin-eap' }
